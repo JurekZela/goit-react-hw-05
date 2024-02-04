@@ -1,5 +1,5 @@
 // import { useState } from 'react'
-import {Routes, Route, NavLink, Link } from 'react-router-dom';
+import {Routes, Route, NavLink } from 'react-router-dom';
 import HomePage from '../../pages/HomePage.jsx';
 import MoviesPage from '../../pages/MoviesPage.jsx';
 import './App.css'
