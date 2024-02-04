@@ -1,14 +1,26 @@
 // import { useState } from 'react'
-import {Routes, Route } from 'react-router-dom';
+import {Routes, Route, NavLink, Link } from 'react-router-dom';
+import HomePage from '../../pages/HomePage.jsx';
+import MoviesPage from '../../pages/MoviesPage.jsx';
 import './App.css'
 
 function App() {
 
   return (
 <div>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/movies">Movies</NavLink>
+        </li>
+      </ul>
+    </nav>
+  </header>
   <Routes>
-    <Route path="/" element={<div>Home</div>}/>
-    <Route path="/movies" element={<div>Movies</div>}/>
+    <Route path="/" element={<HomePage />} />
+    <Route path="/movies" element={<MoviesPage />} />
   </Routes>
 </div>
   )
