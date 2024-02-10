@@ -1,29 +1,26 @@
 // import { useState } from 'react'
-import {Routes, Route, NavLink } from 'react-router-dom';
+import {Routes, Route } from 'react-router-dom';
 import HomePage from '../../pages/HomePage.jsx';
 import MoviesPage from '../../pages/MoviesPage.jsx';
-import './App.css'
+import Error from '../../pages/Error.jsx';
+import  Navbar  from '../NavBar/Navbar.jsx';
+import CardDetails from '../../pages/MoviesDetailsPage.jsx';
 
-function App() {
 
+
+
+const App = () => {
   return (
 <div>
-  <header>
-    <nav>
-      <ul>
-        <li>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/movies">Movies</NavLink>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <Routes>
-    <Route path="/" element={<HomePage />} />
-    <Route path="/movies" element={<MoviesPage />} />
-  </Routes>
+<Navbar />
+<Routes>
+<Route path="/" element={<HomePage />} />
+<Route path="/movies" element={<MoviesPage />} />
+<Route path="/movies/:moviesId" element={< CardDetails />} />
+<Route path="*" element={<Error />} />
+</Routes>
 </div>
   )
 }
 
-export default App
+export default App;
