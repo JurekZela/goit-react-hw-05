@@ -27,7 +27,7 @@ const CardDetails = () => {
         fetchDetails();
 
         return () => controller.abort();
-    }, [])
+    })
 
     return <div> 
         <ComeBack />
