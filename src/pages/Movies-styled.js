@@ -32,6 +32,7 @@ width: 250px;
 export const NameMovieHome = styled.p`
 max-width: 250px;
 color: white;
+text-decoration: none;
 
 &:hover{
   color: yellow;

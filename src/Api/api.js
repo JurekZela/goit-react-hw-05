@@ -13,11 +13,9 @@ export async function fetchTrending ({abortController}) {
   return response.data;
 }
 
-export async function fetchMovieDetails ({ controller, movieId }) {
+export async function fetchMovieDetails (movieId) {
 
-  const response = await axios.get(`movie/${movieId}?api_key=${API_KEY}`, {
-    signal: controller.signal,
-  })
+  const response = await axios.get(`movie/${movieId}?api_key=${API_KEY}&language=en-US`)
 
   return response.data;
 }

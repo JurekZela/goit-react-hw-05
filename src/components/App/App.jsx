@@ -4,7 +4,7 @@ import HomePage from '../../pages/HomePage.jsx';
 import MoviesPage from '../../pages/MoviesPage.jsx';
 import Error from '../../pages/Error.jsx';
 import  Navbar  from '../NavBar/Navbar.jsx';
-import CardDetails from '../../pages/MoviesDetailsPage.jsx';
+import CardDetails from '../../pages/MovieDetails/MoviesDetailsPage.jsx';
 
 
 
@@ -16,7 +16,7 @@ const App = () => {
 <Routes>
 <Route path="/" element={<HomePage />} />
 <Route path="/movies" element={<MoviesPage />} />
-<Route path="/movies/:moviesId" element={< CardDetails />} />
+<Route path="/movies/:movieId" element={< CardDetails />} />
 <Route path="*" element={<Error />} />
 </Routes>
 </div>
