@@ -19,3 +19,9 @@ export async function fetchMovieDetails (movieId) {
 
   return response.data;
 }
+
+export async function fetchSearchMovies (searchMovie) {
+
+  const response = await axios.get(`search/movie?api_key=${API_KEY}&include_adult=false&language=en-US&page=1&query=${searchMovie}`)
+  return response.data;
+}

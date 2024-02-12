@@ -1,8 +1,10 @@
-import { NavLink, useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import  ComeBack from '../../components/ComeBack/ComeBackBtn';
 import { fetchMovieDetails } from '../../Api/api';
 import { useEffect, useState } from "react";
 import { Img, WrapContainer, Wrap, DetailsContainer } from './MovieDetailsPage-styled';
+import  MovieCast   from '../../components/Cast/Cast';
+import MovieReviews from '../../components/Reviews/Reviews';
 
 const CardDetails = () => {
     const { movieId } = useParams();
@@ -50,10 +52,11 @@ const CardDetails = () => {
             </Wrap>
         )}
         <div>
-            <p>Additional Information</p>
-            <NavLink to="/movies/:movieId/cast">Cast</NavLink>
-            <NavLink to="/movies/:movieId/reviews">Reviews</NavLink>
+            <p>Additional Information:</p>
+            <MovieCast  />
+            <MovieReviews />
         </div>
+        <Outlet />
         </div>
     )
 };
