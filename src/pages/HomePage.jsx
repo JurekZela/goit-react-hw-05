@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchTrending } from '../Api/api';
-import { WrapContainer, Cards, Card, Img, Wrap, NameMovieHome, TitleHome } from './Movies-styled';
+import { WrapContainer, Cards, ListCard, Img, Wrap, NameMovieHome, TitleHome } from './Movies-styled';
 
 export default function HomePage() {
 const [loader, setLoader] = useState(false);
@@ -46,14 +46,14 @@ return (
       <TitleHome>Trending Today</TitleHome>
       <Cards>
     {movies.length > 0 && movies.map(({ id, title, poster_path }) => ( 
-    <Card key={id}>
+    <ListCard key={id}>
       <Link to={`/movies/${id}`}>
       <Img src={`https://image.tmdb.org/t/p/w200${poster_path}`}/>
         {title && (
           <NameMovieHome>{title}</NameMovieHome>
         )}
         </Link>
-    </Card> ) )}
+    </ListCard> ) )}
       </Cards>
     </WrapContainer>
     {error && <p>Opps, something with wrong!!! True again!</p>}

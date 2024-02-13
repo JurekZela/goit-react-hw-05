@@ -22,8 +22,11 @@ export const Cards = styled.ul`
   color: black;
   `;
 
-  export const Card = styled.li`
-  `;
+  export const ListCard = styled.li`
+  &:hover{
+  scale: 1.1;
+}
+`;
 
 export const Img = styled.img`
 width: 250px;
@@ -34,9 +37,6 @@ max-width: 250px;
 color: white;
 text-decoration: none;
 
-&:hover{
-  color: yellow;
-}
 `;
 
 export const TitleHome = styled.h1`
@@ -45,3 +45,40 @@ export const TitleHome = styled.h1`
   padding-bottom: 20px;
   color: white;
 `;
+
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// SEARCH MOVIE
+
+export const Card = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 200px;
+  height: 355px;
+
+  :hover {
+    scale: 1.1;
+  }
+`;
+
+export const List = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  `;
+
+  export const Li = styled.li`
+    list-style: none;
+  padding: 15px;
+  margin: 0;
+
+  &:hover{
+  scale: 1.1;
+}
+  `;
+
+  export const TitleMovie = styled.p`
+  max-width: 250px;
+  `;

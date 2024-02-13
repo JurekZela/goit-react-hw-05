@@ -1,8 +1,10 @@
 import { useEffect, useState  } from 'react';
+import { AiOutlineFileImage } from 'react-icons/ai';
 import { useSearchParams } from 'react-router-dom';
 import  ComeBack  from '../components/ComeBack/ComeBackBtn'; 
 import { fetchSearchMovies } from '../Api/api';
 import  SearchForm from '../components/SearchForm/SearchForm';
+import { List, Li, TitleMovie } from './Movies-styled';
 
 export default function MoviesPage() {
     const [movie, setMovie] = useState([]);
@@ -22,7 +24,9 @@ export default function MoviesPage() {
 
         async function fetchSearch(){
             try {
-                const response = await fetchSearchMovies(params.get('searchParams'));
+                const searchMovie = params.get('searchParams') ?? '';
+
+                const response = await fetchSearchMovies(searchMovie);
                 setMovie(response.results);
                 console.log(response);
                 
@@ -39,7 +43,17 @@ export default function MoviesPage() {
     return( <div>  
         <ComeBack />
 <SearchForm value={searchParams} onChange={changeSearchParams} />
-<ul>{movie & (movie.map(({ poster_path, }) => {<li><img src={`https://image.tmdb.org/t/p/w500${poster_path}`} /></li>}))}</ul>
+<List>{movie.length > 0 && movie.map(({ poster_path, id, original_title }) => 
+(<Li key={id}>
+{poster_path ? (
+        <img width={250} height={250} 
+        src={`https://image.tmdb.org/t/p/w500${poster_path}`} />
+) : (
+    <AiOutlineFileImage size={250} />
+)}
+    <TitleMovie>{original_title}</TitleMovie>
+    </Li>))}
+    </List>
 {error & <div>Opps, something with wrong, try again!</div>}
     </div>)
 }
