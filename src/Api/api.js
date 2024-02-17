@@ -25,3 +25,14 @@ export async function fetchSearchMovies (searchMovie) {
   const response = await axios.get(`search/movie?api_key=${API_KEY}&include_adult=false&language=en-US&page=1&query=${searchMovie}`)
   return response.data;
 }
+
+export async function fetchReviews (movieId) {
+
+  const response = await axios.get(`movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`)
+  return response.data;
+}
+
+export async function fetchCast(movieId) {
+  const response = await axios.get(`movie/${movieId}/credits?language=en-US&api_key=${API_KEY}`)
+  return response.data;
+}

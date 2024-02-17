@@ -3,8 +3,8 @@ import  ComeBack from '../../components/ComeBack/ComeBackBtn';
 import { fetchMovieDetails } from '../../Api/api';
 import { useEffect, useState } from "react";
 import { Img, WrapContainer, Wrap, DetailsContainer } from './MovieDetailsPage-styled';
-import  MovieCast   from '../../components/Cast/Cast';
-import MovieReviews from '../../components/Reviews/Reviews';
+import MovieCastPages from '../Reviews/CastPages/CastPages';
+import MovieReviews from '../Reviews/Reviews';
 
 const CardDetails = () => {
     const { movieId } = useParams();
@@ -14,7 +14,6 @@ const CardDetails = () => {
         async function fetchDetails() {
             try {
             const response = await fetchMovieDetails(movieId);
-            console.log(response);
 
             setMovieDetails(response)
             
@@ -53,7 +52,7 @@ const CardDetails = () => {
         )}
         <div>
             <p>Additional Information:</p>
-            <MovieCast  />
+            <MovieCastPages  />
             <MovieReviews />
         </div>
         <Outlet />

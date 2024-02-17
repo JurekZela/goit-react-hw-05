@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { fetchTrending } from '../Api/api';
-import { WrapContainer, Cards, ListCard, Img, Wrap, NameMovieHome, TitleHome } from './Movies-styled';
+import { WrapContainer, Wrap, TitleHome } from './Movies-styled';
+import CardDetails from '../components/CardMovieDetails/CardMovieDetails.jsx';
 
 export default function HomePage() {
 const [loader, setLoader] = useState(false);
@@ -17,7 +17,6 @@ useEffect(() => {
 
 try {
  const response = await fetchTrending({ abortController: controller, });
- console.log(response);
 
  setMovies(prevMovies => [...prevMovies, ...response.results]);
 }
@@ -44,17 +43,7 @@ return (
     <Wrap>
     <WrapContainer>
       <TitleHome>Trending Today</TitleHome>
-      <Cards>
-    {movies.length > 0 && movies.map(({ id, title, poster_path }) => ( 
-    <ListCard key={id}>
-      <Link to={`/movies/${id}`}>
-      <Img src={`https://image.tmdb.org/t/p/w200${poster_path}`}/>
-        {title && (
-          <NameMovieHome>{title}</NameMovieHome>
-        )}
-        </Link>
-    </ListCard> ) )}
-      </Cards>
+      <CardDetails arrDetails={movies} />
     </WrapContainer>
     {error && <p>Opps, something with wrong!!! True again!</p>}
     {loader && <p>loader</p>}

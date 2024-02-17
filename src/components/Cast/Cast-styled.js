@@ -1,8 +1,22 @@
 import { styled } from 'styled-components';
-import { NavLink } from 'react-router-dom';
 
-export const LinkCast = styled(NavLink)`
-text-decoration: none;
-color: white;
-margin: 5px;
+export const CastContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  gap: 20px;
+`;
+
+export const CastCard = styled.li`
+  :hover {
+    scale: 1.1;
+  }
+`;
+
+export const Paragraf = styled.p`
+  margin: 5px;
+  max-width: 150px;
 `;
