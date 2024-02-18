@@ -1,8 +1,9 @@
 import { LinkCast } from './CastPages-styled';
 
 const MovieCastPages = () => {
+    
     return (
-        <LinkCast to="cast">Cast</LinkCast>
+        <LinkCast to="cast" state="movies">Cast</LinkCast>
     )
 };
 

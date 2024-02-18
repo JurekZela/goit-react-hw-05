@@ -24,8 +24,6 @@ const ReviewsCards = () => {
       
     }, [movieId])
 
-    console.log(reviews);
-
     return (
          <div>
             {reviews ? (

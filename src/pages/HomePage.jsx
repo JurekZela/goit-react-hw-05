@@ -3,6 +3,7 @@ import { fetchTrending } from '../Api/api';
 import { WrapContainer, Wrap, TitleHome } from './Movies-styled';
 import CardDetails from '../components/CardMovieDetails/CardMovieDetails.jsx';
 
+
 export default function HomePage() {
 const [loader, setLoader] = useState(false);
 const [error, setError] = useState(false);

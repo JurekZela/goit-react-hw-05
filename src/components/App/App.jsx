@@ -1,4 +1,4 @@
-import {Routes, Route } from 'react-router-dom';
+import {Routes, Route, } from 'react-router-dom';
 import HomePage from '../../pages/HomePage.jsx';
 import MoviesPage from '../../pages/MoviesPage.jsx';
 import Error from '../../pages/Error.jsx';
@@ -11,6 +11,7 @@ import MovieCast from '../Cast/Cast.jsx';
 
 
 const App = () => {
+
   return (
 <div>
 <Navbar />

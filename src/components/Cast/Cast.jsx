@@ -5,7 +5,7 @@ import { fetchCast } from '../../Api/api';
 import { CastContainer, CastCard, Paragraf, } from './Cast-styled';
 
 const MovieCast = () => {
-    const [cast, setCast] = useState([])
+    const [cast, setCast] = useState([]);
     const { movieId } = useParams();
 
     useEffect(() => {
@@ -21,8 +21,6 @@ const MovieCast = () => {
       }
       searchCast();
     }, [movieId])
-
-    console.log(cast);
 
     return (
         <>

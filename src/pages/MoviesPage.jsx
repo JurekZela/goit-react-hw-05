@@ -38,8 +38,6 @@ export default function MoviesPage() {
         
     }, [searchParams])
 
-    console.log(movies);
-
     return( 
     <>  
         <ComeBack />
