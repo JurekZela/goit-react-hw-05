@@ -1,5 +1,5 @@
 import { Outlet, useParams, useLocation } from "react-router-dom";
-import { useRef } from "react";
+import { Suspense, useRef } from "react";
 import  ComeBack from '../../components/ComeBack/ComeBackBtn';
 import { fetchMovieDetails } from '../../Api/api';
 import { useEffect, useState } from "react";
@@ -60,7 +60,9 @@ const CardDetails = () => {
             <MovieCastPages  />
             <MovieReviews />
         </div>
+        <Suspense fallback={<div>Loading...</div>}>
         <Outlet />
+        </Suspense>
         </div>
     )
 };
