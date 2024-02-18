@@ -1,5 +1,5 @@
-import { Outlet, useLocation, useParams, } from "react-router-dom";
-import { useRef } from 'react';
+import { Outlet, useParams, useLocation } from "react-router-dom";
+import { useRef } from "react";
 import  ComeBack from '../../components/ComeBack/ComeBackBtn';
 import { fetchMovieDetails } from '../../Api/api';
 import { useEffect, useState } from "react";
@@ -10,8 +10,9 @@ import MovieReviews from '../Reviews/Reviews';
 const CardDetails = () => {
     const { movieId } = useParams();
     const [ movieDetails, setMovieDetails] = useState({})
+
     const location = useLocation();
-    const backLinkRef = useRef(location.state);
+    const locationRef = useRef(location.state)
     
 
     useEffect(() => {
@@ -37,7 +38,7 @@ const CardDetails = () => {
 
     return (
         <div> 
-        <ComeBack to={backLinkRef}/>
+        <ComeBack backLink={locationRef.current ?? '/'} />
         {movieDetails && (
             <Wrap>
                 <WrapContainer>

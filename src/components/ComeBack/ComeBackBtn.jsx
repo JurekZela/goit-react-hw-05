@@ -1,11 +1,9 @@
 import { GoBackPage, Button } from './ComeBackBtn-styled';
 
-const ComeBack = ( refLocation ) => {
-
-    const btnBack = refLocation.current ?? '/';
+const ComeBack = ({ backLink }) => {
 
     return (
-        <GoBackPage to={btnBack}>
+        <GoBackPage to={backLink}>
 <Button>
 Come back
 </Button>
