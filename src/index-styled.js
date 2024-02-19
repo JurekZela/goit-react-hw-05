@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import  bg  from './img/bg.jpg';
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
 html {
   box-sizing: border-box;
   width: 100vw;
@@ -57,3 +57,5 @@ p{
   color: white;
 }
 `;
+
+export default GlobalStyle;
